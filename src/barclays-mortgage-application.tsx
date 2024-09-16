@@ -12,8 +12,11 @@ const lifecycles = singleSpaReact({
   ReactDOM,
   rootComponent: () => (
     <Provider store={store}>
-      <Root/>
-  </Provider>
+      <React.StrictMode>
+        <Root />
+      </React.StrictMode>
+
+    </Provider>
   ),
   errorBoundary(err, info, props) {
     // Customize the root error boundary for your microfrontend here.

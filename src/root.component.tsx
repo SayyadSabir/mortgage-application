@@ -1,25 +1,35 @@
 import React, { useState } from "react";
 import { Box, Typography, Paper, Button, Grid } from "@mui/material";
 import { navigateToUrl } from "single-spa";
-import { useGetItemByIdQuery } from './apiSlice';
+import { useFetchAndStoreApplicationData } from "./useFetchAndStoreApplicationData";
+import { useAppSelector } from "./hooks";
+import { shallowEqual } from "react-redux";
+// import { useGetItemByIdQuery } from './apiSlice';
 
 const MortgageApplication = ()  => {
 
    // Always call hooks at the top level
-  const { data, error, isLoading } = useGetItemByIdQuery(5);
+  // const { data, error, isLoading } = useGetItemByIdQuery(5);
+  const { data, error, isLoading } = useFetchAndStoreApplicationData();
+
   const [currentSection, setCurrentSection] = useState<string | null>(null);
 
+  
   const handleSectionClick = (section: string) => {
     setCurrentSection(section);
     navigateToUrl(section);
   };
 
+  const state = useAppSelector((state) => state.overview,shallowEqual);
+// Log state changes
+  
   // Conditional rendering based on the state and query status
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (currentSection) return null; // Return null if a section is selected, the MFE will load
 
-
+  console.log("State: ", state); 
+  console.log('ApplicationComponent mounted or updated');
   return (
     <Box
       sx={{
