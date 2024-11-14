@@ -1,0 +1,27 @@
+/* iPhone container styling */
+.iphone-container {
+    width: 375px; /* Typical iPhone width, adjust as needed */
+    height: 812px; /* Typical iPhone height, adjust as needed */
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #000;
+  }
+  
+  /* Top bar to mimic the iPhone notch and speaker */
+  .iphone-top-bar {
+    width: 50%;
+    height: 30px;
+    background-color: #333;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+  
+  /* Inner container for content */
+  .iphone-content {
+    flex-grow: 1;
+    overflow-y: auto;
+  }

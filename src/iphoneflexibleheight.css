@@ -1,0 +1,31 @@
+/* iPhoneLayout.module.css */
+.iphoneContainer {
+    max-width: 375px; /* Maximum width (similar to iPhone width) */
+    min-width: 320px; /* Minimum width to prevent it from shrinking too much */
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #000;
+    margin: 20px auto; /* Centering the container */
+    display: flex;
+    flex-direction: column; /* Ensures content stacks vertically */
+    justify-content: flex-start; /* Aligns content to the top */
+  }
+  
+  .iphoneTopBar {
+    width: 50%;
+    height: 30px;
+    background-color: #333;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+  
+  .iphoneContent {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 100px; /* Ensures content area has a minimum height */
+  }
+  
