@@ -1,0 +1,55 @@
+/* iPhone container styling */
+.iphoneContainer {
+    width: 375px; /* Typical iPhone width */
+    height: 600px; /* Fixed height */
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Top bar to mimic the iPhone notch and speaker */
+  .iphoneTopBar {
+    width: 50%;
+    height: 30px;
+    background-color: #333;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Inner container for content */
+  .iphoneContent {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Enables vertical scroll */
+    padding-right: 10px; /* Extra space for scrollbar */
+    box-sizing: border-box;
+  }
+  
+  /* Hide default scrollbar for non-WebKit browsers */
+  .iphoneContent {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+  
+  /* Custom scrollbar styling for WebKit browsers (Chrome, Safari) */
+  .iphoneContent::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .iphoneContent::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .iphoneContent::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+  
